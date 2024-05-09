@@ -510,19 +510,19 @@ function processVlessHeader(vlessBuffer, userID) {
 				vlessBuffer.slice(addressValueIndex, addressValueIndex + addressLength)
 			);
 			break;
-		case 3:
-			addressLength = 16;
-			const dataView = new DataView(
-				vlessBuffer.slice(addressValueIndex, addressValueIndex + addressLength)
-			);
+		//case 3:
+			//addressLength = 16;
+			//const dataView = new DataView(
+				//vlessBuffer.slice(addressValueIndex, addressValueIndex + addressLength)
+			//);
 			// 2001:0db8:85a3:0000:0000:8a2e:0370:7334
-			const ipv6 = [];
-			for (let i = 0; i < 8; i++) {
-				ipv6.push(dataView.getUint16(i * 2).toString(16));
-			}
-			addressValue = ipv6.join(':');
+			//const ipv6 = [];
+			//for (let i = 0; i < 8; i++) {
+				//ipv6.push(dataView.getUint16(i * 2).toString(16));
+			//}
+			//addressValue = ipv6.join(':');
 			// seems no need add [] for ipv6
-			break;
+			//break;
 		default:
 			return {
 				hasError: true,
@@ -785,7 +785,7 @@ const getNormalConfigs = async (env, hostName, client) => {
         'www.speedtest.net',
         ...(cleanIPs ? cleanIPs.split(',') : []),
         ...resolved.ipv4,
-        ...resolved.ipv6.map((ip) => `[${ip}]`),
+        //...resolved.ipv6.map((ip) => `[${ip}]`),
     ];
 
     Addresses.forEach((addr) => {
@@ -930,7 +930,7 @@ const buildWorkerLessConfig = async (env, client) => {
     fakeOutbound.tag = 'fake-outbound';
 
     let fragConfig = structuredClone(xrayConfigTemp);
-    fragConfig.remarks  = '💦🧩 خودمون - 🇮🇷 وب‌گاه/سایت مقصد آدرس واقعی شما را با این گزینه می‌بیند.'
+    fragConfig.remarks  = '💦🧩 خودمون - ❗️⚠️ وب‌گاه/سایت مقصد آدرس واقعی شما را با این گزینه می‌بیند'
     fragConfig.dns = await buildDNSObject(remoteDNS, localDNS, blockAds, bypassIran, blockPorn, true);
     fragConfig.outbounds[0].settings.domainStrategy = 'UseIP';
     fragConfig.outbounds[0].settings.fragment.length = `${lengthMin}-${lengthMax}`;
@@ -990,7 +990,7 @@ const getFragmentConfigs = async (env, hostName, client) => {
         "www.speedtest.net",
         ...(cleanIPs ? cleanIPs.split(",") : []),
         ...resolved.ipv4,
-        ...resolved.ipv6.map((ip) => `[${ip}]`)
+        //...resolved.ipv6.map((ip) => `[${ip}]`)
     ];
 
     if (outProxy) {
@@ -1095,7 +1095,7 @@ const getSingboxConfig = async (env, hostName) => {
         "www.speedtest.net",
         ...(cleanIPs ? cleanIPs.split(",") : []),
         ...resolved.ipv4,
-        ...resolved.ipv6.map((ip) => `[${ip}]`),
+        //...resolved.ipv6.map((ip) => `[${ip}]`),
     ];
 
     Addresses.forEach(addr => {
