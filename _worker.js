@@ -1063,32 +1063,11 @@ const getFragmentConfigs = async (env, hostName, client) => {
     };
 
 
-    let bestPing = structuredClone(xrayConfigTemp);
-    bestPing.remarks = '💦 BPB Frag - Best Ping 💥';
-    bestPing.dns = await buildDNSObject(remoteDNS, localDNS, blockAds, bypassIran, blockPorn);
-    bestPing.outbounds[0].settings.fragment.length = `${lengthMin}-${lengthMax}`;
-    bestPing.outbounds[0].settings.fragment.interval = `${intervalMin}-${intervalMax}`;
-    bestPing.outbounds = [...outbounds, ...bestPing.outbounds];
-    
-    if (proxyOutbound) {
-        bestPing.observatory.subjectSelector = ["out"];
-        bestPing.routing.balancers[0].selector = ["out"];
-        bestPing.routing.rules = buildRoutingRules(localDNS, blockAds, bypassIran, blockPorn, bypassLAN, true, true);
-    } else {
-        bestPing.routing.rules = buildRoutingRules(localDNS, blockAds, bypassIran, blockPorn, bypassLAN, false, true);
-    }
-
-    if (client === 'nekoray') {
-        bestPing.inbounds[0].port = 2080;
-        bestPing.inbounds[1].port = 2081;
-    }
-
     const workerLessConfig = await buildWorkerLessConfig(env, client);
 
 
     
     Configs.push(
-        { address: 'Best-Ping', config: bestPing}, 
         { address: 'WorkerLess', config: workerLessConfig}
     );
 
