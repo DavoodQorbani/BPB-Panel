@@ -986,7 +986,7 @@ const getFragmentConfigs = async (env, hostName, client) => {
 
     const resolved = await resolveDNS(hostName);
     const Addresses = [
-        hostName,
+        //hostName,
         "www.speedtest.net",
         ...(cleanIPs ? cleanIPs.split(",") : []),
         ...resolved.ipv4,
@@ -1112,7 +1112,7 @@ const getSingboxConfig = async (env, hostName) => {
 
     const resolved = await resolveDNS(hostName);
     const Addresses = [
-        hostName,
+        //hostName,
         "www.speedtest.net",
         ...(cleanIPs ? cleanIPs.split(",") : []),
         ...resolved.ipv4,
