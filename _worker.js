@@ -779,7 +779,7 @@ const getNormalConfigs = async (env, hostName, client) => {
     }
 
     const { cleanIPs, proxyIP } = proxySettings;
-    const resolved = await resolveDNS(hostName);
+    //const resolved = await resolveDNS(hostName);
     const Addresses = [
         hostName,
         'www.speedtest.net',
