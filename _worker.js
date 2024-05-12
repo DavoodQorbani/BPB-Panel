@@ -342,7 +342,7 @@ async function handleTCPOutBound(request, remoteSocket, addressRemote, portRemot
 	 * @returns {Promise<void>} A Promise that resolves when the retry is complete.
 	 */
 	async function retry() {
-        const { pathname } = new URL(request.url);
+        //const { pathname } = new URL(request.url);
         let panelProxyIP = pathname.split('/')[2];
         panelProxyIP = panelProxyIP ? atob(panelProxyIP) : undefined;
 		const tcpSocket = await connectAndWrite(panelProxyIP || proxyIP || addressRemote, portRemote);
