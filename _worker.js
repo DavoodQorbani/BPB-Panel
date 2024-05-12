@@ -930,7 +930,7 @@ const buildWorkerLessConfig = async (env, client) => {
     fakeOutbound.tag = 'fake-outbound';
 
     let fragConfig = structuredClone(xrayConfigTemp);
-    fragConfig.remarks  = '💦🧩 خودمون🇳🇱هلند :: با این گزینه، وب‌گاه بازدید شده آدرس واقعی شما را می‌بیند❗️⚠️'	 //fragConfig.remarks  = '💦 BPB Frag - WorkerLess ⭐'
+    fragConfig.remarks  = '💦🧩 خودمون🇳🇱هلند - هوایدا شدن آدرس واقعی شما با این گزینه برای وب‌گاه مقصد❗️⚠️'	 //fragConfig.remarks  = '💦 BPB Frag - WorkerLess ⭐'
     fragConfig.dns = await buildDNSObject(remoteDNS, localDNS, blockAds, bypassIran, blockPorn, true);
     fragConfig.outbounds[0].settings.domainStrategy = 'UseIP';
     fragConfig.outbounds[0].settings.fragment.length = `${lengthMin}-${lengthMax}`;
