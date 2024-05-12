@@ -354,7 +354,7 @@ async function handleTCPOutBound(request, remoteSocket, addressRemote, portRemot
 		remoteSocketToWS(tcpSocket, webSocket, vlessResponseHeader, null, log);
 	}
 
-	//const tcpSocket = await connectAndWrite(addressRemote, portRemote);
+	const tcpSocket = await connectAndWrite(addressRemote, portRemote);
 
 	// when remoteSocket is ready, pass to websocket
 	// remote--> ws
@@ -1187,7 +1187,7 @@ const resolveDNS = async (domain) => {
 
     try {
         const [ipv4Response, ipv6Response] = await Promise.all([
-            fetch(dohURLv4, { headers: { accept: 'application/dns-json' } }),
+            //fetch(dohURLv4, { headers: { accept: 'application/dns-json' } }),
             fetch(dohURLv6, { headers: { accept: 'application/dns-json' } }),
         ]);
 
