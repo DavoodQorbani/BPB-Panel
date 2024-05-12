@@ -40,7 +40,7 @@ export default {
             
             if (!upgradeHeader || upgradeHeader !== 'websocket') {
                 
-                //const url = new URL(request.url);
+                const url = new URL(request.url);
                 const searchParams = new URLSearchParams(url.search);
                 const host = request.headers.get('Host');
                 const client = searchParams.get('app');
@@ -354,7 +354,7 @@ async function handleTCPOutBound(request, remoteSocket, addressRemote, portRemot
 		remoteSocketToWS(tcpSocket, webSocket, vlessResponseHeader, null, log);
 	}
 
-	const tcpSocket = await connectAndWrite(addressRemote, portRemote);
+	//const tcpSocket = await connectAndWrite(addressRemote, portRemote);
 
 	// when remoteSocket is ready, pass to websocket
 	// remote--> ws
