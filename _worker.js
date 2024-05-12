@@ -984,7 +984,7 @@ const getFragmentConfigs = async (env, hostName, client) => {
         outProxyParams
     } = proxySettings;
 
-    const resolved = await resolveDNS(hostName);
+    //const resolved = await resolveDNS(hostName);
     const Addresses = [
         hostName,
         "www.speedtest.net",
