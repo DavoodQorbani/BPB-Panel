@@ -92,7 +92,7 @@ export default {
                         if (!isAuth) return Response.redirect(`${url.origin}/login`, 302);
                         if (! await env.bpb.get('proxySettings')) await updateDataset(env);
                         let fragConfs = await getFragmentConfigs(env, host, 'nekoray');
-                        //let homePage = await renderHomePage(request, env, host, fragConfs);
+                        let homePage = await renderHomePage(request, env, host, fragConfs);
 
                         return new Response(homePage, {
                             status: 200,
