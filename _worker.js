@@ -1187,7 +1187,7 @@ const resolveDNS = async (domain) => {
 
     try {
         const [ipv4Response, ipv6Response] = await Promise.all([
-            //fetch(dohURLv4, { headers: { accept: 'application/dns-json' } }),
+            fetch(dohURLv4, { headers: { accept: 'application/dns-json' } }),
             fetch(dohURLv6, { headers: { accept: 'application/dns-json' } }),
         ]);
 
