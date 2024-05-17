@@ -781,15 +781,15 @@ const getNormalConfigs = async (env, hostName, client) => {
     const { cleanIPs, proxyIP } = proxySettings;
     const resolved = await resolveDNS(hostName);
     const Addresses = [
-        hostName,
+        //hostName,
         'www.speedtest.net',
         ...(cleanIPs ? cleanIPs.split(',') : []),
         ...resolved.ipv4,
-        ...resolved.ipv6.map((ip) => `[${ip}]`),
+        //...resolved.ipv6.map((ip) => `[${ip}]`),
     ];
 
     Addresses.forEach((addr) => {
-        let remark = `💦 BPB - ${addr}`;
+        let remark = `🧩 خودمون🇬🇧انگلستان - ${addr}`;
         remark = remark.length <= 30 ? remark : `${remark.slice(0,29)}...`;
 
         vlessWsTls += 'vless' + `://${userID}@${addr}:443?encryption=none&security=tls&type=ws&host=${
@@ -930,7 +930,7 @@ const buildWorkerLessConfig = async (env, client) => {
     fakeOutbound.tag = 'fake-outbound';
 
     let fragConfig = structuredClone(xrayConfigTemp);
-    fragConfig.remarks  = '💦 BPB Frag - WorkerLess ⭐'
+    fragConfig.remarks  = '🧩 خودمون🇬🇧انگلستان - هویدا شدن آدرس واقعی شما با این گزینه برای وب‌گاه مقصد❗️⚠️'	 //fragConfig.remarks  = '💦 BPB Frag - WorkerLess ⭐'
     fragConfig.dns = await buildDNSObject(remoteDNS, localDNS, blockAds, bypassIran, blockPorn, true);
     fragConfig.outbounds[0].settings.domainStrategy = 'UseIP';
     fragConfig.outbounds[0].settings.fragment.length = `${lengthMin}-${lengthMax}`;
@@ -986,11 +986,11 @@ const getFragmentConfigs = async (env, hostName, client) => {
 
     const resolved = await resolveDNS(hostName);
     const Addresses = [
-        hostName,
+        //hostName,
         "www.speedtest.net",
         ...(cleanIPs ? cleanIPs.split(",") : []),
         ...resolved.ipv4,
-        ...resolved.ipv6.map((ip) => `[${ip}]`)
+        //...resolved.ipv6.map((ip) => `[${ip}]`)
     ];
 
     if (outProxy) {
@@ -1012,7 +1012,7 @@ const getFragmentConfigs = async (env, hostName, client) => {
         let addr = Addresses[index];
         let fragConfig = structuredClone(xrayConfigTemp);
         let outbound = structuredClone(xrayOutboundTemp);
-        let remark = `💦 BPB Frag - ${addr}`;
+        let remark = `🧩 خودمون🇬🇧انگلستان - ${addr}`;
         delete outbound.mux;
         delete outbound.streamSettings.grpcSettings;
         delete outbound.streamSettings.realitySettings;
@@ -1063,32 +1063,32 @@ const getFragmentConfigs = async (env, hostName, client) => {
     };
 
 
-    let bestPing = structuredClone(xrayConfigTemp);
-    bestPing.remarks = '💦 BPB Frag - Best Ping 💥';
-    bestPing.dns = await buildDNSObject(remoteDNS, localDNS, blockAds, bypassIran, blockPorn);
-    bestPing.outbounds[0].settings.fragment.length = `${lengthMin}-${lengthMax}`;
-    bestPing.outbounds[0].settings.fragment.interval = `${intervalMin}-${intervalMax}`;
-    bestPing.outbounds = [...outbounds, ...bestPing.outbounds];
+    //let bestPing = structuredClone(xrayConfigTemp);
+    //bestPing.remarks = '🧩 خودمون🇬🇧انگلستان - Best Ping 💥';
+    //bestPing.dns = await buildDNSObject(remoteDNS, localDNS, blockAds, bypassIran, blockPorn);
+    //bestPing.outbounds[0].settings.fragment.length = `${lengthMin}-${lengthMax}`;
+    //bestPing.outbounds[0].settings.fragment.interval = `${intervalMin}-${intervalMax}`;
+    //bestPing.outbounds = [...outbounds, ...bestPing.outbounds];
     
-    if (proxyOutbound) {
-        bestPing.observatory.subjectSelector = ["out"];
-        bestPing.routing.balancers[0].selector = ["out"];
-        bestPing.routing.rules = buildRoutingRules(localDNS, blockAds, bypassIran, blockPorn, bypassLAN, true, true);
-    } else {
-        bestPing.routing.rules = buildRoutingRules(localDNS, blockAds, bypassIran, blockPorn, bypassLAN, false, true);
-    }
+    //if (proxyOutbound) {
+        //bestPing.observatory.subjectSelector = ["out"];
+        //bestPing.routing.balancers[0].selector = ["out"];
+        //bestPing.routing.rules = buildRoutingRules(localDNS, blockAds, bypassIran, blockPorn, bypassLAN, true, true);
+    //} else {
+        //bestPing.routing.rules = buildRoutingRules(localDNS, blockAds, bypassIran, blockPorn, bypassLAN, false, true);
+    //}
 
-    if (client === 'nekoray') {
-        bestPing.inbounds[0].port = 2080;
-        bestPing.inbounds[1].port = 2081;
-    }
+    //if (client === 'nekoray') {
+        //bestPing.inbounds[0].port = 2080;
+        //bestPing.inbounds[1].port = 2081;
+    //}
 
     const workerLessConfig = await buildWorkerLessConfig(env, client);
 
 
     
     Configs.push(
-        { address: 'Best-Ping', config: bestPing}, 
+        //{ address: 'Best-Ping', config: bestPing}, 
         { address: 'WorkerLess', config: workerLessConfig}
     );
 
@@ -1112,11 +1112,11 @@ const getSingboxConfig = async (env, hostName) => {
 
     const resolved = await resolveDNS(hostName);
     const Addresses = [
-        hostName,
+        //hostName,
         "www.speedtest.net",
         ...(cleanIPs ? cleanIPs.split(",") : []),
         ...resolved.ipv4,
-        ...resolved.ipv6.map((ip) => `[${ip}]`),
+        //...resolved.ipv6.map((ip) => `[${ip}]`),
     ];
 
     Addresses.forEach(addr => {
@@ -1531,7 +1531,7 @@ const renderHomePage = async (request, env, hostName, fragConfigs) => {
 	</head>
 	
 	<body>
-		<h1>BPB Panel <span style="font-size: smaller;">${panelVersion}</span> 💦</h1>
+		<h1>BPB Panel <span style="font-size: smaller;">${panelVersion}</span> 🧩</h1>
 		<div class="form-container">
             <h2>FRAGMENT SETTINGS ⚙️</h2>
 			<form id="configForm">
@@ -2089,7 +2089,7 @@ const renderLoginPage = async () => {
     </head>
     <body>
         <div class="container">
-            <h1>BPB Panel <span style="font-size: smaller;">${panelVersion}</span> 💦</h1>
+            <h1>BPB Panel <span style="font-size: smaller;">${panelVersion}</span> 🧩</h1>
             <div class="form-container">
                 <h2>User Login</h2>
                 <form id="loginForm">
@@ -2160,7 +2160,7 @@ const renderErrorPage = (message, error, refer) => {
 
     <body>
         <div id="error-container">
-            <h1>BPB Panel <span style="font-size: smaller;">${panelVersion}</span> 💦</h1>
+            <h1>BPB Panel <span style="font-size: smaller;">${panelVersion}</span> 🧩</h1>
             <div id="error-message">
                 <h2>${message} ${refer 
                     ? 'Please try again or refer to <a href="https://github.com/bia-pain-bache/BPB-Worker-Panel/blob/main/README.md">documents</a>' 
