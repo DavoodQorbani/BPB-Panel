@@ -789,7 +789,7 @@ const getNormalConfigs = async (env, hostName, client) => {
     ];
 
     Addresses.forEach((addr) => {
-        let remark = `🧩 خودمون🇳🇱هلند - ${addr}`;
+        let remark = `🧩 خودمون🌎🌍🌏جهان - ${addr}`;
         remark = remark.length <= 30 ? remark : `${remark.slice(0,29)}...`;
 
         vlessWsTls += 'vless' + `://${userID}@${addr}:443?encryption=none&security=tls&type=ws&host=${
@@ -930,7 +930,7 @@ const buildWorkerLessConfig = async (env, client) => {
     fakeOutbound.tag = 'fake-outbound';
 
     let fragConfig = structuredClone(xrayConfigTemp);
-    fragConfig.remarks  = '🧩 خودمون🇳🇱هلند - هویدا شدن آدرس واقعی شما با این گزینه برای وب‌گاه مقصد❗️⚠️'	 //fragConfig.remarks  = '💦 BPB Frag - WorkerLess ⭐'
+    fragConfig.remarks  = '🧩 خودمون🌎🌍🌏جهان - هویدا شدن آدرس واقعی شما با این گزینه برای وب‌گاه مقصد❗️⚠️'	 //fragConfig.remarks  = '💦 BPB Frag - WorkerLess ⭐'
     fragConfig.dns = await buildDNSObject(remoteDNS, localDNS, blockAds, bypassIran, blockPorn, true);
     fragConfig.outbounds[0].settings.domainStrategy = 'UseIP';
     fragConfig.outbounds[0].settings.fragment.length = `${lengthMin}-${lengthMax}`;
@@ -1012,7 +1012,7 @@ const getFragmentConfigs = async (env, hostName, client) => {
         let addr = Addresses[index];
         let fragConfig = structuredClone(xrayConfigTemp);
         let outbound = structuredClone(xrayOutboundTemp);
-        let remark = `🧩 خودمون🇳🇱هلند - ${addr}`;
+        let remark = `🧩 خودمون🌎🌍🌏جهان - ${addr}`;
         delete outbound.mux;
         delete outbound.streamSettings.grpcSettings;
         delete outbound.streamSettings.realitySettings;
@@ -1064,7 +1064,7 @@ const getFragmentConfigs = async (env, hostName, client) => {
 
 
     //let bestPing = structuredClone(xrayConfigTemp);
-    //bestPing.remarks = '🧩 خودمون🇳🇱هلند - Best Ping 💥';
+    //bestPing.remarks = '🧩 خودمون🌎🌍🌏جهان - Best Ping 💥';
     //bestPing.dns = await buildDNSObject(remoteDNS, localDNS, blockAds, bypassIran, blockPorn);
     //bestPing.outbounds[0].settings.fragment.length = `${lengthMin}-${lengthMax}`;
     //bestPing.outbounds[0].settings.fragment.interval = `${intervalMin}-${intervalMax}`;
