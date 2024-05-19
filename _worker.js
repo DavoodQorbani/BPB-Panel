@@ -936,7 +936,7 @@ const buildWorkerLessConfig = async (env, client) => {
     fragConfig.outbounds[0].settings.fragment.length = `${lengthMin}-${lengthMax}`;
     fragConfig.outbounds[0].settings.fragment.interval = `${intervalMin}-${intervalMax}`;
     fragConfig.outbounds = [
-        //{...fragConfig.outbounds[0]}, 
+        {...fragConfig.outbounds[0]}, 
         {...fragConfig.outbounds[1]}, 
         {...fakeOutbound}, 
         {...fragConfig.outbounds[2]}, 
@@ -1089,7 +1089,7 @@ const getFragmentConfigs = async (env, hostName, client) => {
     
     Configs.push(
         //{ address: 'Best-Ping', config: bestPing}, 
-        { address: 'WorkerLess', config: workerLessConfig}
+        //{ address: 'WorkerLess', config: workerLessConfig}
     );
 
     return Configs;
