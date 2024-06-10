@@ -2216,7 +2216,7 @@ const xrayConfigTemp = {
             protocol: "freedom",
             settings: {
                 fragment: {
-                    packets: "tlshello",
+                    packets: "1-1",
                     length: "",
                     interval: "",
                 },
