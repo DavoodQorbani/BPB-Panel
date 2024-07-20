@@ -793,7 +793,7 @@ const getNormalConfigs = async (env, hostName, client) => {
     const Addresses = [
         //hostName,
         //'www.speedtest.net',
-        ...resolved.ipv4,
+        //...resolved.ipv4,
         //...resolved.ipv6.map((ip) => `[${ip}]`),
         ...(cleanIPs ? cleanIPs.split(',') : [])
     ];
@@ -825,16 +825,16 @@ const generateRemark = (index, port) => {
     switch (index) {
         case 0:
         case 1:
-            //remark = `💦 BPB - Domain_${index + 1} : ${port}`;
-            //break;
+            remark = `💦 BPB - Domain_${index + 1} : ${port}`;
+            break;
         case 2:
         case 3:
-            remark = `🧩 خودمون🇺🇸آمریکا - IPv4_${index - 1}`;
+            remark = `🧩 خودمون🇺🇸آمریکا - IPv4_${index + 1}`;
             break;
         case 4:
-        //case 5:
-            //remark = `💦 BPB - IPv6_${index - 3} : ${port}`;
-            //break;
+        case 5:
+            remark = `💦 BPB - IPv6_${index - 3} : ${port}`;
+            break;
         default:
             remark = `🧩 خودمون🇺🇸آمریکا - Clean IP_${index - 2}`;
             break;
@@ -1031,7 +1031,7 @@ const getFragmentConfigs = async (env, hostName, client) => {
     const Addresses = [
         //hostName,
         //"www.speedtest.net",
-        ...resolved.ipv4,
+        //...resolved.ipv4,
         //...resolved.ipv6.map((ip) => `[${ip}]`),
         ...(cleanIPs ? cleanIPs.split(",") : [])
     ];
@@ -1208,7 +1208,7 @@ const getSingboxConfig = async (env, hostName) => {
     const Addresses = [
         //hostName,
         //"www.speedtest.net",
-        ...resolved.ipv4,
+        //...resolved.ipv4,
         //...resolved.ipv6.map((ip) => `[${ip}]`),
         ...(cleanIPs ? cleanIPs.split(",") : [])
     ];
