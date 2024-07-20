@@ -825,18 +825,18 @@ const generateRemark = (index, port) => {
     switch (index) {
         case 0:
         case 1:
-            remark = `💦 BPB - Domain_${index + 1} : ${port}`;
-            break;
+            //remark = `💦 BPB - Domain_${index + 1} : ${port}`;
+            //break;
         case 2:
         case 3:
-            remark = `🧩 خودمون🇺🇸آمریکا - IPv4_${index + 1}`;
-            break;
+            //remark = `🧩 خودمون🇺🇸آمریکا - IPv4_${index + 1}`;
+            //break;
         case 4:
         case 5:
-            remark = `💦 BPB - IPv6_${index - 3} : ${port}`;
-            break;
+            //remark = `💦 BPB - IPv6_${index - 3} : ${port}`;
+            //break;
         default:
-            remark = `🧩 خودمون🇺🇸آمریکا - Clean IP_${index - 2}`;
+            remark = `🧩 خودمون🇺🇸آمریکا - Clean IP_${index - 5}`;
             break;
     }
 
