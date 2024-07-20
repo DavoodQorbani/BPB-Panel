@@ -836,7 +836,7 @@ const generateRemark = (index, port) => {
             //remark = `💦 BPB - IPv6_${index - 3} : ${port}`;
             //break;
         default:
-            remark = `خودمون🇺🇸آمریکا - Clean IP_${index + 1}`;
+            remark = `خودمون🇺🇸آمریکا - ${index + 1}`;  //remark = `💦 BPB - Clean IP_${index - 5} : ${port}`;
             break;
     }
 
