@@ -832,11 +832,11 @@ const generateRemark = (index, port) => {
             remark = `🧩 خودمون🇺🇸آمریکا - IPv4_${index + 1}`;
             break;
         case 4:
-        case 5:
+        //case 5:
             //remark = `💦 BPB - IPv6_${index - 3} : ${port}`;
             //break;
         default:
-            remark = `🧩 خودمون🇺🇸آمریکا - Clean IP_${index - 0}`;
+            remark = `🧩 خودمون🇺🇸آمریکا - Clean IP_${index - 2}`;
             break;
     }
 
