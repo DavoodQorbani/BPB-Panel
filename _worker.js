@@ -829,7 +829,7 @@ const generateRemark = (index, port) => {
             //break;
         case 2:
         case 3:
-            remark = `🧩 خودمون🇺🇸آمریکا - IPv4_${index - 1} : ${port}`;
+            remark = `🧩 خودمون🇺🇸آمریکا - IPv4_${index + 1} : ${port}`;
             break;
         case 4:
         case 5:
