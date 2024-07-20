@@ -834,7 +834,7 @@ const generateRemark = (index, port) => {
         case 4:
         case 5:
             //remark = `💦 BPB - IPv6_${index - 3} : ${port}`;
-            //break;
+            break;
         default:
             remark = `🧩 خودمون🇺🇸آمریکا - Clean IP_${index - 0}`;
             break;
